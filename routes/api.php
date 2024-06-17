@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Api\V1\ScoreController;
-use App\Http\Controllers\Api\V1\InvoiceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-  return $request->user();
-});
-
-Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1', 'middleware' => 'auth:sanctum'], function () {
+Route::prefix('/v1')->controller(ScoreController::class)->name('api.')->group(
+  function () {
+    Route::apiResource('games', ScoreController::class);
+    
+    
+  }
+);
+/*Route::group(['prefix' => 'v1', 'namespace' => 'App\Http\Controllers\Api\V1', 'middleware' => 'auth:sanctum'], function () {
   Route::apiResource('games', ScoreController::class);
-  Route::post('games/bulk', ['uses' => 'ScoreController@bulkStore']);
-});
+  Route::post('games/bulk', ['uses' => 'ScoreController@bulkStore'])->name('refresh');
+});*/

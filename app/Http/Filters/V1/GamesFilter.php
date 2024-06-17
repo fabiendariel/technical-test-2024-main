@@ -9,11 +9,11 @@ class GamesFilter extends ApiFilter
 {
 
   protected $allowedParams = [
-    'GameEndDateTime' => ['eq'],
+    'date' => ['eq'],
   ];
 
   protected $columnMap = [
-    'GameEndDateTime' => 'game_end_datetime'
+    'date' => 'DateTime'
   ];
 
   protected $operatorMap = [

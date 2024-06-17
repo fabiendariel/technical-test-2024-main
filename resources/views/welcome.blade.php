@@ -7,6 +7,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="h-full bg-[#56746b] flex justify-center items-center">
+    
         <div class="text-2xl text-white">{{ config('app.name') }}</div>
     </body>
 </html>

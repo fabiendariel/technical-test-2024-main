@@ -15,18 +15,18 @@ class GameResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'GameId' => $this->id,
-            'Season' => $this->season,
-            'Status' => $this->status,
-            'DateTime' => $this->datetime,
-            'AwayTeam' => $this->away_team,
-            'HomeTeam' => $this->home_team,
-            'AwayTeamID' => $this->away_team_id,
-            'HomeTeamID' => $this->home_team_id,
-            'AwayTeamScore' => $this->away_team_score,
-            'HomeTeamScore' => $this->home_team_score,
-            'Updated' => $this->updated_at,
-            'GameEndDateTime' => $this->game_end_datetime,
+            'GameId' => $this->GameId,
+            'Season' => $this->Season,
+            'Status' => $this->Status,
+            'DateTime' => $this->DateTime->format('Y-m-d'),
+            'AwayTeam' => $this->AwayTeam,
+            'HomeTeam' => $this->HomeTeam,
+            'AwayTeamID' => $this->AwayTeamID,
+            'HomeTeamID' => $this->HomeTeamID,
+            'AwayTeamScore' => $this->AwayTeamScore,
+            'HomeTeamScore' => $this->HomeTeamScore,
+            'Updated' => $this->Updated,
+            'GameEndDateTime' => $this->GameEndDateTime,
         ];
     }
 }

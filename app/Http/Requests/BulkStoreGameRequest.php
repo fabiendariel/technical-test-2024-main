@@ -36,18 +36,18 @@ class BulkStoreGameRequest extends FormRequest
     $data = [];
 
     foreach ($this->toArray() as $obj) {
-      $obj['id'] = $this->GameId ?? null;
-      $obj['status'] = $this->Status ?? null;
-      $obj['season'] = $this->Season ?? null;
-      $obj['away_team'] = $this->AwayTeam ?? null;
-      $obj['home_team'] = $this->HomeTeam ?? null;
-      $obj['away_team_id'] = $this->AwayTeamID ?? null;
-      $obj['home_team_id'] = $this->HomeTeamID ?? null;
-      $obj['away_team_score'] = $this->AwayTeamScore ?? null;
-      $obj['home_team_score'] = $this->HomeTeamScore ?? null;
-      $obj['updated'] = $this->Updated ?? null;
-      $obj['game_end_datetime'] = $this->GameEndDateTime ?? null;
-      $obj['datetime'] = $this->DateTime ?? null;
+      $obj['GameId'] = $this->GameId ?? null;
+      $obj['Status'] = $this->Status ?? null;
+      $obj['Season'] = $this->Season ?? null;
+      $obj['AwayTeam'] = $this->AwayTeam ?? null;
+      $obj['HomeTeam'] = $this->HomeTeam ?? null;
+      $obj['AwayTeamID'] = $this->AwayTeamID ?? null;
+      $obj['HomeTeamID'] = $this->HomeTeamID ?? null;
+      $obj['AwayTeamScore'] = $this->AwayTeamScore ?? null;
+      $obj['HomeTeamScore'] = $this->HomeTeamScore ?? null;
+      $obj['Updated'] = $this->Updated ?? null;
+      $obj['GameEndDateTime'] = $this->GameEndDateTime ?? null;
+      $obj['DateTime'] = $this->DateTime->format('Y-m-d') ?? null;
       $data[] = $obj;
     }
 

@@ -12,17 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('games', function (Blueprint $table) {
-            $table->id();
-            $table->dateTime('game_end_datetime');
-            $table->integer('season');
-            $table->string('status');
-            $table->string('away_team');
-            $table->string('home_team');
-            $table->integer('away_team_id ');
-            $table->integer('home_team_id');
-            $table->integer('away_team_score ');
-            $table->integer('home_team_score');
-            $table->dateTime('updated_at');
+            $table->id('GameId');
+            $table->dateTime('GameEndDateTime');
+            $table->dateTime('DateTime');
+            $table->integer('Season');
+            $table->string('Status');
+            $table->string('AwayTeam');
+            $table->string('HomeTeam');
+            $table->integer('AwayTeamID');
+            $table->integer('HomeTeamID');
+            $table->integer('AwayTeamScore');
+            $table->integer('HomeTeamScore');
+            $table->dateTime('Updated');
         });
     }
 
