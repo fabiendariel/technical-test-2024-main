@@ -51,18 +51,19 @@ class ScoreController extends Controller
             $response = $client->get($apiUrl);
 
             // Get the response body as an array
-
+            /*
             $filter = new GamesFilter();
             $filterItems = $filter->transform($request);
 
             $games = Game::where($filterItems);
             
-            if($games->count() == 0){
+            if($games->count() == 0){*/
                 $data = $this->bulkStore(json_decode($response->getBody(), true));
-            }
+            /*}
             else{
                 $data = $games->get();
             }
+            */
             
             // Handle the retrieved weather data as needed (e.g., pass it to a view)
             return view('api/scores', ['nbaDatas' => $data, 'selectedDate' => $date]);

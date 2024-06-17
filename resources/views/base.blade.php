@@ -45,7 +45,7 @@
     <nav aria-label="...">
       <ul class="pagination pagination-lg">
         @foreach($period as $key => $value)
-          <li class="page-item" aria-current="page">
+          <li class="page-item {{ $value->format('Y-m-d') == date('Y-m-d') ? 'active' : '' }}" aria-current="page">
             <a class="page-link" href="{{ route('scores', ['date' => $value->format('Y-m-d')]) }}">{{ $value->format('F d Y') }}</a>
           </li>
         @endforeach
