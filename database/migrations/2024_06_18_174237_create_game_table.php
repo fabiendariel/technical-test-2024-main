@@ -7,14 +7,22 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * Run the migrations.
      */
     public function up(): void
     {
         Schema::create('games', function (Blueprint $table) {
-            $table->id('GameId');
+            $table->id();
+            $table->integer('GameID');
             $table->dateTime('GameEndDateTime');
-            $table->dateTime('DateTime');
+            $table->date('DateTime');
             $table->integer('Season');
             $table->string('Status');
             $table->string('AwayTeam');
@@ -24,6 +32,7 @@ return new class extends Migration
             $table->integer('AwayTeamScore');
             $table->integer('HomeTeamScore');
             $table->dateTime('Updated');
+            $table->unique('GameID');
         });
     }
 

@@ -8,7 +8,7 @@
     
       @foreach ($nbaDatas as $game)
       <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-        <h3>{{ date_format(new DateTime($game['GameEndDateTime']),'D, F d') }}</h3>
+        <h3>{{ date_format(new DateTime($game['DateTime']),'D, F d') }}</h3>
         @php
           $bold_home = $bold_away = '';
           if($game['HomeTeamScore'] > $game['AwayTeamScore']){
